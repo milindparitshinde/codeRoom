@@ -72,7 +72,7 @@ def home(request):
                                                 Q(room__name__icontains=q))
     
     topics = Topic.objects.all()[0:5]
-    room_count = rooms.count()
+    room_count = len(rooms)
 
     return render(request, 'base/home.html', {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'room_messages': room_messages});
 
